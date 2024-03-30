@@ -1,0 +1,7 @@
+cmake-build-debug
+onnxruntime-osx-arm64-static_lib-1.17.1
+node_modules
+dist
+.parcel-cache
+.idea
+.DS_Store

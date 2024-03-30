@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./index.less">
+</head>
+<body>
+  <sp-body size='S' style="text-align: center; margin-top: 6px; line-height: 10px">
+    <div>
+      <div style="font-weight: bolder; letter-spacing: 1px; font-size: 18px; margin-bottom: -2px;">MattePro</div>
+      <div style="color: rgba(255, 255, 255, 0.6); font-weight: lighter">By: 白泽Shirasawa <span id="version" style="display: inline; font-size: 10px"></span></div>
+    </div>
+  </sp-body>
+  <main>
+    <section id="main-buttons">
+      <sp-button variant="cta" id="matte-btn">精细抠图</sp-button>&nbsp;&nbsp;
+      <sp-button variant="primary" id="offical-website">访问官网</sp-button>
+    </section>
+  </main>
+
+  <section id="matte" style="display:none">
+    <div class="buttons">
+      <sp-button variant="cta" id="do-matte">执行抠图</sp-button>&nbsp;&nbsp;
+      <sp-button variant="secondary" id="cancel" style="display:none">取消</sp-button>
+    </div>
+    <sp-divider style="margin: 12px 0"></sp-divider>
+    <div class="row matte-brushs">
+      <div id="matte-green" style="margin-right: 14px">
+        <div class="btn" style="background-color: #00ff00;"></div>
+        <sp-label>抠图边界</sp-label>
+      </div>
+      <div id="matte-red" style="margin-right: 14px">
+        <div class="btn" style="background-color: #ff0000;"></div>
+        <sp-label>前景区域</sp-label>
+      </div>
+      <div id="matte-remove">
+        <div class="btn"></div>
+        <sp-label>橡皮擦</sp-label>
+      </div>
+    </div>
+    <sp-slider id="matte-hardness" min="0" max="100" value="0" value-label="%" variant="filled" fill-offset="left" style="width: 100%">
+      <sp-label slot="label">硬化边缘</sp-label>
+    </sp-slider>
+    <sp-switch label="导出蒙版" id="matte-mask-only">导出蒙版</sp-switch>
+    <sp-divider style="margin: 12px 0"></sp-divider>
+  </section>
+
+  <dialog id="alert">
+    <sp-heading size="M" style="margin: 0; letter-spacing: 1px;" class="title">Omokage - 提示</sp-heading>
+    <sp-divider style="margin:10px 0"></sp-divider>
+    <sp-body size="M" id="alert-content"></sp-body>
+    <sp-textfield id="alert-input" placeholder="" style="display: none"></sp-textfield>
+    <div class="row" style="justify-content: flex-end; margin-top: 14px">
+      <sp-button variant="secondary" style="margin-right:10px" class="cancel">取消</sp-button>
+      <sp-button variant="cta" class="ok">确定</sp-button>
+    </div>
+  </dialog>
+  <div style="display: none">本产品受软件著作权和专利权保护, 请勿破解! 违法必究! 此项目或许在未来会开源, 但是现在不会, 为什么?
+    I really need money to support my open source project, 我真的很需要钱去支持我的开源项目: https://github.com/ShirasawaSama
+  </div>
+  <script src="./index.ts" type="module"></script>
+</body>
+</html>

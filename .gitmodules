@@ -1,0 +1,3 @@
+[submodule "simpleocv"]
+	path = simpleocv
+	url = https://github.com/lucasjinreal/simpleocv.git

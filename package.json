@@ -1,0 +1,47 @@
+{
+  "name": "omokage",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "eslint .",
+    "fix": "eslint --fix src/ --ext .ts,.tsx",
+    "start": "parcel watch src/index.html --no-hmr --no-source-maps --public-url .",
+    "build": "del-cli dist && parcel build src/index.html --no-source-maps --public-url . && npm run replace && npm run mini:manifest",
+    "mini:manifest": "node -e \"const fs = require('fs'); fs.writeFileSync('dist/manifest.json', JSON.stringify(JSON.parse(fs.readFileSync('dist/manifest.json', 'utf-8'))))\"",
+    "replace": "node -e \"const fs = require('fs'); fs.writeFileSync('dist/index.html', fs.readFileSync('dist/index.html', 'utf-8').replace(' type=\\\"module\\\"', ''))\"",
+    "zip": "mv dist Shirasawa.Omokage && zip -r Shirasawa.Omokage.zip Shirasawa.Omokage"
+  },
+  "author": "Shirasawa",
+  "license": "AGPL-3.0",
+  "browserslist": "chrome >= 90",
+  "alias": {
+    "photoshop": {
+      "global": "window.require('photoshop')"
+    },
+    "uxp": {
+      "global": "window.require('uxp')"
+    }
+  },
+  "targets": {
+    "main": false
+  },
+  "devDependencies": {
+    "@parcel/transformer-less": "^2.11.0",
+    "@rbf/parcel-optimizer-javascript-obfuscator": "^0.2.2",
+    "@types/node": "^20.11.4",
+    "@types/photoshop": "^25.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "del-cli": "^5.1.0",
+    "eslint": "^8.56.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "parcel": "^2.11.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+  }
+}

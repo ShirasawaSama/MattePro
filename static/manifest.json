@@ -1,0 +1,115 @@
+{
+  "id": "shirasawa.mattepro",
+  "name": "MattePro",
+  "version": "1.0.0",
+  "main": "index.html",
+  "manifestVersion": 5,
+  "host": {
+    "app": "PS",
+    "minVersion": "24.2"
+  },
+  "addon": {
+    "name": "MattePro.uxpaddon"
+  },
+  "requiredPermissions": {
+    "launchProcess": { "schemes": ["http", "https"] },
+    "localFileSystem": "fullAccess",
+    "enableAddon": true,
+    "network": {
+      "domains": "all"
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "MattePro",
+      "label": {
+        "default": "MattePro"
+      },
+      "minimumSize": {
+        "width": 270,
+        "height": 200
+      },
+      "maximumSize": {
+        "width": 2000,
+        "height": 2000
+      },
+      "preferredDockedSize": {
+        "width": 270,
+        "height": 400
+      },
+      "preferredFloatingSize": {
+        "width": 270,
+        "height": 400
+      },
+      "icons": [
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/icon_D.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "dark",
+            "darkest"
+          ],
+          "species": [
+            "generic"
+          ]
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/icon_N.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "lightest",
+            "light"
+          ],
+          "species": [
+            "generic"
+          ]
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_D.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "dark",
+        "darkest"
+      ],
+      "species": [
+        "generic"
+      ]
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_N.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "lightest",
+        "light"
+      ],
+      "species": [
+        "generic"
+      ]
+    }
+  ]
+}
